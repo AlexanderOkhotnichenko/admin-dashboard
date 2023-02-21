@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+  min-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Sofia Pro;
+}
+
+body {
+  line-height: 1;
+  position: relative;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-size: inherit;
+  min-width: 320px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+[class*="__container"] {
+  max-width: 1660px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app {
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+}
+
+@media (max-width: 590px) {
+  .app {
+    overflow: inherit;
+  }
+}

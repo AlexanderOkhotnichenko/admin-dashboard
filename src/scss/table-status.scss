@@ -1,0 +1,119 @@
+$red: rgb(237, 47, 85);
+$white: #FFFFFF;
+$shadow: rgba(0, 0, 0, 0.1);
+$black: #000000;
+$black2: #999;
+$lightgreen: #8de02c;
+$lightred: #d21339;
+$lightblue: #26a9e6;
+$lighorange: rgb(255, 117, 66);
+
+.content-status {
+  box-shadow: 0 7px 25px $shadow;
+  padding: 1.25em;
+  border-radius: 1.25em;
+}
+
+.orders-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.25em;
+  h2 {
+    color: $red;
+    font-weight: 700;
+  }
+  a {
+    display: block;
+    background-color: $red;
+    border-radius: 5px;
+    padding: 0.5em;
+    span {
+      color: $white;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.table-status {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    cursor: pointer;
+    border-bottom: 1px solid $shadow;
+    &:last-child {
+      border: none;
+    }
+    td {
+      padding: 0.85em;
+      &:nth-child(2),
+      &:nth-child(3) {
+        text-align: center;
+      }
+      &:last-child {
+        text-align: end;
+      }
+    }
+  }
+}
+
+.table-head {
+  
+  tr {
+    td {
+      font-weight: 600;
+      color: $black;
+      &:last-child {
+        text-align: end;
+      }
+    }
+  }
+}
+
+.table-body {
+  tr {
+ 
+    border-radius: 28px;
+    &:hover {
+      background-color: $red;
+      td {
+        color: $white;
+      }
+    }
+    td {
+      color: $black;
+    }
+  }
+}
+
+.status {
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: $white;
+  white-space: nowrap;
+  &.delivered {
+    background-color: $lightgreen;
+  }
+  &.pending {
+    background-color: $lighorange;
+  }
+  &.process {
+    background-color: $lightblue;
+  }
+  &.return {
+    background-color: $lightred;
+  }
+}
+
+@media (max-width: 590px) {
+  .content-status {
+    overflow-x: auto;
+  }
+ .table-status {
+    width: max-content;
+  }
+  .orders-row {
+    width: 500px;
+  }
+}

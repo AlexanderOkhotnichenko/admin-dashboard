@@ -1,0 +1,70 @@
+$shadow: rgba(0, 0, 0, 0.1);
+$gray: #999;
+$red: rgb(237, 47, 85);
+$white: #ffffff;
+
+.content-cards {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 30px;
+}
+
+.card {
+  padding: 1.25em;
+  border-radius: 1.25em;
+  box-shadow: 0 7px 25px $shadow;
+  transition: 0.4s;
+  transform: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $red;
+    transform: translateY(-8px);
+    .card-number,
+    .card-icon ion-icon,
+    .card-text {
+      color: $white;
+    }
+  }
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.card-number {
+  font-weight: 600;
+  font-size: 2.5em;
+  color: $red;
+  transition: 0.4s;
+  letter-spacing: 0.03em;
+  display: block;
+  width: 2.5em;
+}
+
+.card-icon ion-icon {
+  font-size: 3.5em;
+  color: $gray;
+  transition: 0.4s;
+}
+
+.card-text {
+  margin-top: 5px;
+  font-size: 1.1em;
+  color: $gray;
+  transition: 0.4s;
+}
+
+@media (max-width: 1032px) {
+  .content-cards {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 590px) {
+  .content-cards {
+    grid-template-columns: repeat(1, auto);
+  }
+}

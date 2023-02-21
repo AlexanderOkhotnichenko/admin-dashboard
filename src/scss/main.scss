@@ -1,0 +1,29 @@
+.main {
+  padding-left: 90px;
+  flex: 1 1 auto;
+  transition: 0.6s;
+
+  &.active {
+    padding-left: 300px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  &__content {}
+}
+
+@media (max-width: 887px) {
+  .main {
+    padding: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .main.active {
+    padding-left: 250px;
+  }
+}

@@ -1,0 +1,122 @@
+$white: #FFFFFF;
+$background: rgb(237, 47, 85);
+
+.header {
+  width: 90px;
+  height: 100vh;
+  background-color: $background;
+  transition: .6s;
+  position: fixed;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    padding: 20px 15px;
+    padding-right: 0;
+  }
+  &.active {
+    width: 300px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  >* {
+    color: $white;
+  }
+}
+
+.logo-icon ion-icon {
+  min-width: 60px;
+  font-size: 1.6em;
+}
+
+.logo-name {
+  font-size: 1.15em;
+}
+
+.navigation {
+  padding: 35px 0;
+  overflow: hidden;
+}
+
+.navigation-item {
+  position: relative;
+
+  &.hover-active .navigation-link {
+    background-color: $white;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border-radius: 50%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+
+    &::before {
+      right: 0;
+      top: -50px;
+      box-shadow: 35px 35px 0 10px $white;
+    }
+
+    &::after {
+      right: 0;
+      bottom: -50px;
+      box-shadow: 35px -35px 0 10px $white;
+    }
+
+    .link-icon ion-icon,
+    .link-name {
+      color: $background;
+    }
+  }
+}
+
+.navigation-link {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 1.064em;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+  >* {
+    color: $white;
+  }
+}
+
+.link-icon ion-icon {
+  font-size: 1.6em;
+}
+
+.link-name {
+  display: block;
+  font-size: 1.15em;
+  min-width: 80px;
+}
+
+@media (max-width: 887px) {
+  .header {
+    left: -90px;
+    &.active {
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .header.active {
+    width: 250px;
+  }
+}

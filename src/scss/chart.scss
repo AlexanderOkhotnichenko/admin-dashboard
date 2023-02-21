@@ -1,0 +1,30 @@
+$shadow: rgba(0, 0, 0, 0.1);
+
+.content-chart {
+  position: relative;
+  width: 100%;
+  padding: 1.9em 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1.9em;
+  min-height: 200px;
+}
+
+.chart-box {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 7px 25px $shadow;
+  padding: 1.25em;
+  border-radius: 1.25em;
+  transition: .4s;
+  &.no-hover {
+    opacity: .6;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .content-chart {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

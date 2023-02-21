@@ -1,0 +1,77 @@
+$shadow: rgba(0, 0, 0, 0.1);
+$red: rgb(237, 47, 85);
+$black: #000000;
+$black2: #999;
+$white: #ffffff;
+
+.content-users {
+  box-shadow: 0 7px 25px $shadow;
+  padding: 1.25em;
+  border-radius: 1.25em;
+}
+
+.users-title {
+  color: $red;
+  font-weight: 700;
+  padding-bottom: 0.85em;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  li {
+    padding: 0.85em;
+    display: flex;
+    gap: 20px;
+    transition: .3s;
+    border-radius: 0.4em;
+    cursor: pointer;
+    &:hover {
+      background-color: $red;
+      transform: scale(1.05);
+      .user-name,
+      .user-country {
+        color: $white;
+      }
+    }
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-description {
+      >*:not(:last-child) {
+        padding-bottom: 5px;
+      }
+    }
+
+    .user-name {
+      transition: .3s;
+      font-size: 1.15em;
+      color: $black;
+    }
+
+    .user-country {
+      transition: .3s;
+      color: $black2;
+    }
+  }
+}
+
+@media (max-width: 1032px) {
+  .users-list {
+    display: grid;
+    justify-content: space-between;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .users-list li .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .users-list li .user-description {
+    font-size: 1.1em;
+  }
+}
